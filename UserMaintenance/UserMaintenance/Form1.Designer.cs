@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listUser = new System.Windows.Forms.ListBox();
+            this.listUsers = new System.Windows.Forms.ListBox();
             this.lblLastName = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -36,14 +36,14 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // listUser
+            // listUsers
             // 
-            this.listUser.FormattingEnabled = true;
-            this.listUser.ItemHeight = 16;
-            this.listUser.Location = new System.Drawing.Point(18, 21);
-            this.listUser.Name = "listUser";
-            this.listUser.Size = new System.Drawing.Size(222, 404);
-            this.listUser.TabIndex = 0;
+            this.listUsers.FormattingEnabled = true;
+            this.listUsers.ItemHeight = 16;
+            this.listUsers.Location = new System.Drawing.Point(18, 21);
+            this.listUsers.Name = "listUsers";
+            this.listUsers.Size = new System.Drawing.Size(222, 404);
+            this.listUsers.TabIndex = 0;
             // 
             // lblLastName
             // 
@@ -85,6 +85,7 @@
             this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "button1";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // Form1
             // 
@@ -96,7 +97,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblFirstName);
             this.Controls.Add(this.lblLastName);
-            this.Controls.Add(this.listUser);
+            this.Controls.Add(this.listUsers);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -106,7 +107,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox listUser;
+        private System.Windows.Forms.ListBox listUsers;
         private System.Windows.Forms.Label lblLastName;
         private System.Windows.Forms.Label lblFirstName;
         private System.Windows.Forms.TextBox textBox1;
