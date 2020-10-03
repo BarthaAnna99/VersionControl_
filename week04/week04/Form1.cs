@@ -76,6 +76,21 @@ namespace week04
             headerRange.RowHeight = 40;
             headerRange.Interior.Color = Color.LightBlue;
             headerRange.BorderAround2(Excel.XlLineStyle.xlContinuous, Excel.XlBorderWeight.xlThick);
+
+
+            Excel.Range tableRange = xlSheet.get_Range(GetCell(2, 1), GetCell(1 + values.GetLength(0), values.GetLength(1)));
+            tableRange.BorderAround2(Excel.XlLineStyle.xlContinuous, Excel.XlBorderWeight.xlThick);
+
+            Excel.Range columnRange = xlSheet.get_Range(GetCell(2, 1), GetCell(1 + values.GetLength(0),1));
+            columnRange.Font.Bold = true;
+            columnRange.Interior.Color = Color.LightYellow;
+
+            //Az utolsó oszlop adatainak háttere legyen halványzöld.
+            Excel.Range lastcolumnRange = xlSheet.get_Range(GetCell(2, values.GetLength(1)), GetCell(1 + values.GetLength(0), values.GetLength(1)));
+            lastcolumnRange.Interior.Color = Color.LightGreen;
+            lastcolumnRange.NumberFormat = "0.00";
+            //Az utolsó oszlop adatai két tizedesre kerekített formában jelenjenek meg. (Google)
+
         }
 
         private string GetCell(int x, int y)
