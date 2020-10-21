@@ -23,18 +23,18 @@ namespace week06
         {
             InitializeComponent();
 
-            var mnbService1 = new MNBArfolyamServiceSoapClient();
+            var mnbService = new MNBArfolyamServiceSoapClient();
 
-            var request1 = new GetCurrenciesRequestBody();
+            var request = new GetCurrenciesRequestBody();
 
-            var response1 = mnbService1.GetCurrencies(request1);
+            var response = mnbService.GetCurrencies(request);
 
-            var result1 = response1.GetCurrenciesResult;
+            var result = response.GetCurrenciesResult;
 
             var xml1 = new XmlDocument();
-            xml1.LoadXml(result1);
+            xml1.LoadXml(result);
 
-            Console.WriteLine(result1);
+            Console.WriteLine(result);
 
             foreach (XmlElement element in xml1.DocumentElement)
             {
