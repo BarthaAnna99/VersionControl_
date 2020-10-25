@@ -87,6 +87,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(188, 22);
             this.textBox1.TabIndex = 3;
+            this.textBox1.Text = "C:\\Temp\\nép-teszt.csv";
             // 
             // button1
             // 

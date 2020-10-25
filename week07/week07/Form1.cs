@@ -17,21 +17,21 @@ namespace week07
         List<Person> Population = new List<Person>();
         List<BirthProbability> BirthProbabilities = new List<BirthProbability>();
         List<DeathProbability> DeathProbabilities = new List<DeathProbability>();
+        List<int> Lanyok = new List<int>();
+        List<int> Fiuk = new List<int>();
 
         Random rng = new Random(1234);
 
         public Form1()
         {
             InitializeComponent();
-            string path = textBox1.Text;
-            Population = GetPopulation(@"C:\Temp\nép-teszt.csv");
-            BirthProbabilities = GetBirthProbabilities(@"C:\Temp\születés.csv");
-            DeathProbabilities = GetDeathProbabilities(@"C:\Temp\halál.csv");
 
         }
 
         private void Simulation()
         {
+            richTextBox1.Clear();
+
             for (int year = 2005; year <= numericUpDown1.Value; year++)
             {
                 // Végigmegyünk az összes személyen
@@ -46,8 +46,26 @@ namespace week07
                 int nbrOfFemales = (from x in Population
                                     where x.Gender == Gender.Female && x.IsAlive
                                     select x).Count();
+                Fiuk.Add(nbrOfMales);
+                Lanyok.Add(nbrOfFemales);
+
                 Console.WriteLine(
                     string.Format("Év:{0} Fiúk:{1} Lányok:{2}", year, nbrOfMales, nbrOfFemales));
+            }
+
+            DisplayResults();
+        }
+
+        private void DisplayResults()
+        {
+            int szamlalo = 0;
+
+            for (int year = 2005; year <= numericUpDown1.Value; year++)
+            {
+                richTextBox1.AppendText("Szimulációs év: " + year + "\n" + "\t" + "Fiúk: " + Fiuk[szamlalo]);
+                richTextBox1.AppendText("\n" + "\t" + "Lányok: " + Lanyok[szamlalo] + "\n" + "\n");
+
+                szamlalo += 1;
             }
         }
 
@@ -152,6 +170,11 @@ namespace week07
 
         private void button2_Click(object sender, EventArgs e)
         {
+            string path = textBox1.Text;
+            Population = GetPopulation(path);
+            //Population = GetPopulation(@"C:\Temp\nép-teszt.csv");
+            BirthProbabilities = GetBirthProbabilities(@"C:\Temp\születés.csv");
+            DeathProbabilities = GetDeathProbabilities(@"C:\Temp\halál.csv");
             Simulation();
         }
 
