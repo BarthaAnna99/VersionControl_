@@ -72,7 +72,7 @@ namespace week08
         {
             Factory = new BallFactory()
             {
-                BallColor = btnBallColor.BackColor
+                BallColor = button3.BackColor
             };
         }
 
