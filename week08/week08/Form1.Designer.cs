@@ -40,9 +40,9 @@
             // 
             // mainPanel
             // 
-            this.mainPanel.Location = new System.Drawing.Point(0, 123);
+            this.mainPanel.Location = new System.Drawing.Point(0, 180);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(803, 327);
+            this.mainPanel.Size = new System.Drawing.Size(803, 270);
             this.mainPanel.TabIndex = 0;
             // 
             // createTimer
